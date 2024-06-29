@@ -1,0 +1,102 @@
+/* .input-container {
+      display: flex;
+      align-items: center;
+      //width: 50%; // Set to 50% of the page width
+      margin: 0 auto; // Center the input container horizontally
+      padding: 10px; // Add padding for consistency with chat bubbles
+    }
+       .chat-bubble {
+      gap: 8px;
+      max-width: 100%; // Set to 100% of the container width
+    }
+     .send-button1 {
+        width: 36px;
+        height: 36px;
+        background: url('/assets/Images/icon-button.svg') no-repeat center center;
+        background-size: cover;
+        border-radius: 4px;
+        border: none;
+        padding: 10px;
+        gap: 10px;
+        background-color: transparent; /* Use transparent to avoid background color issues */
+      }
+      /* .send-button {
+        position: absolute;
+        right: 0px; /* Adjust based on padding within the input */
+        /* top: 77%;
+        margin-right: 3px;
+        margin-bottom: 4px;
+        transform: translateY(-50%);
+        background: url('/assets/Images/icon-button.svg') no-repeat center center;
+        background-size: cover;
+        width: 36px;
+        height: 36px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        z-index: 5;
+      */
+        /* visibility: visible !important; Force visibility */
+      /* }
+      .input-send-button {
+        position: absolute;
+        right: 15px; /* Adjust based on padding within the input */
+        top: 50%;
+        margin-right: 2px;
+        margin-bottom: 4px;
+        transform: translateY(-50%);
+        background: url('/assets/Images/icon-button.svg') no-repeat center center;
+        background-size: cover;
+        width: 36px;
+        height: 36px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        z-index: 5;
+     
+        visibility: visible !important; /* Force visibility */
+      }
+     
+      .form-control:focus + .send-button {
+        display: block; /* Ensures button is not hidden on input focus */
+      }
+      .input-group {
+        position: relative;
+      }
+      .new-chat-button {
+        width: 114px;
+        height: 28px;
+        background: url('/assets/Images/new-chat-button-deafult.svg') no-repeat center center;
+        background-size: cover;
+        padding: 0;
+        background-color: transparent;
+        border: none !important; /* Remove border */
+        }
+       
+        .stop-button {
+        width: 114px;
+        height: 28px;
+        background: url('/assets/Images/button-tertiary.svg') no-repeat center center;
+        background-size: cover;
+        padding: 0;
+        background-color: transparent;
+        border: none !important; /* Remove border */
+        }
+     
+        .centered-buttons{
+          height: Hug(28px);
+        }
+     
+        .footer-text {
+          color: #494C53;
+          font-size: 12px;
+          line-height: 16px;
+          text-align: center;
+          padding: 15px;
+      }
+
+ */
+
+
+
+ */ */

@@ -1,0 +1,399 @@
+﻿<html lang="en">
+<head>
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="utf-8">
+    <title>XPILOTUI</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        @font-face {
+            font-family: "Geist Variable";
+            src: url("./media/GeistVariableVF.woff2") format("woff2");
+            font-weight: 400 900;
+            font-display: swap;
+            font-synthesis: none;
+        }
+        /*# sourceMappingURL=app.component.css.map */
+    </style>
+    <style>
+
+        .chat-container[_ngcontent-ng-c77164329] {
+            width: 50%;
+            background-color: #f1f1f1;
+            margin-bottom: 100px;
+            padding: 1rem;
+            padding-bottom: 120px;
+        }
+
+        .input-container[_ngcontent-ng-c77164329] {
+            width: 48.7%;
+            bottom: 0px;
+            left: 25%;
+            position: sticky;
+        }
+
+        .icon[_ngcontent-ng-c77164329] {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .inner-frame[_ngcontent-ng-c77164329] {
+            position: absolute;
+            top: 33.5%;
+            left: 25%;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .text-content[_ngcontent-ng-c77164329] {
+            font-family: "Geist Variable", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+            text-align: left;
+            color: #000000;
+        }
+
+        .questions[_ngcontent-ng-c77164329] {
+            margin-top: 20px;
+        }
+
+        .question-buttons[_ngcontent-ng-c77164329] {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .feedback[_ngcontent-ng-c77164329] {
+            margin-bottom: 100px;
+        }
+
+        .pill[_ngcontent-ng-c77164329] {
+            padding: 4px 20px;
+            font-size: 14px;
+            line-height: 24px;
+            border-radius: 16px;
+            border: 1px solid #cccccc;
+            color: #000000;
+            cursor: pointer;
+            min-width: 240px;
+            height: 32px;
+        }
+        /*# sourceMappingURL=chat-box.component.css.map */
+    </style>
+    <style>
+
+        .input-container[_ngcontent-ng-c2252278866] {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .chat-bubble[_ngcontent-ng-c2252278866] {
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        .send-button1[_ngcontent-ng-c2252278866] {
+            width: 36px;
+            height: 36px;
+            background: url(/assets/Images/icon-button.svg) no-repeat center center;
+            background-size: cover;
+            border-radius: 4px;
+            border: none;
+            padding: 10px;
+            gap: 10px;
+            background-color: transparent;
+        }
+
+        .send-button[_ngcontent-ng-c2252278866] {
+            position: absolute;
+            margin-right: 3px;
+            margin-bottom: 4px;
+            transform: translateY(-50%);
+            background: url(/assets/Images/icon-button.svg) no-repeat center center;
+            background-size: cover;
+            width: 36px;
+            height: 36px;
+            border: none;
+            right: 3%;
+            top: 50%;
+        }
+
+        .input-send-button[_ngcontent-ng-c2252278866] {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            margin-right: 3px;
+            margin-bottom: 4px;
+            transform: translateY(-50%);
+            background: url(/assets/Images/icon-button.svg) no-repeat center center;
+            background-size: cover;
+            width: 36px;
+            height: 36px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            z-index: 5;
+            visibility: visible !important;
+        }
+
+        .form-control[_ngcontent-ng-c2252278866]:focus + .send-button[_ngcontent-ng-c2252278866] {
+            display: block;
+        }
+
+        .input-group[_ngcontent-ng-c2252278866] {
+            position: relative;
+        }
+
+        .new-chat-button[_ngcontent-ng-c2252278866] {
+            width: 114px;
+            height: 28px;
+            background: url(/assets/Images/new-chat-button-deafult.svg) no-repeat center center;
+            background-size: cover;
+            padding: 0;
+            background-color: transparent;
+            border: none !important;
+        }
+
+        .stop-button[_ngcontent-ng-c2252278866] {
+            width: 114px;
+            height: 28px;
+            background: url(/assets/Images/button-tertiary.svg) no-repeat center center;
+            background-size: cover;
+            padding: 0;
+            background-color: transparent;
+            border: none !important;
+        }
+
+        .centered-buttons[_ngcontent-ng-c2252278866] {
+            height: Hug(28px);
+        }
+
+        .footer-text[_ngcontent-ng-c2252278866] {
+            color: #494c53;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .wrapper[_ngcontent-ng-c2252278866] {
+            width: 100%;
+            background: #fff;
+            border-radius: 5px;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea[_ngcontent-ng-c2252278866] {
+            width: 100%;
+            height: 52px;
+            padding: 5px;
+            outline: none;
+            resize: none;
+            border-radius: 5px;
+            border: 0px !important;
+            transition: border-width 0.2s, height 0.2s;
+            font-size: 14px;
+            line-height: 1.5;
+            box-sizing: border-box;
+        }
+
+            textarea[_ngcontent-ng-c2252278866]:focus {
+                border-width: 2px;
+                color: #333;
+            }
+
+            textarea[_ngcontent-ng-c2252278866]::-webkit-scrollbar {
+                width: 0px;
+            }
+
+        .send-button-top[_ngcontent-ng-c2252278866] {
+            top: 60%;
+        }
+
+        .textarea-height[_ngcontent-ng-c2252278866] {
+            height: auto;
+        }
+        /*# sourceMappingURL=input-field.component.css.map */
+    </style>
+    <style>
+
+        .chat-bubble[_ngcontent-ng-c60121019] {
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        .chat-bubble.user[_ngcontent-ng-c60121019], .chat-bubble.assistant[_ngcontent-ng-c60121019] {
+            text-align: left;
+        }
+
+        .chat-bubble[_ngcontent-ng-c60121019] .message-content[_ngcontent-ng-c60121019] {
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .avtar[_ngcontent-ng-c60121019] {
+            width: 36px;
+            height: 36px;
+            rotate: 0;
+        }
+
+        .name[_ngcontent-ng-c60121019] {
+            font-family: "Geist Variable", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            padding: 10px;
+        }
+
+        .content-system[_ngcontent-ng-c60121019] {
+            padding: 40px 56px 40px 56px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .content-user[_ngcontent-ng-c60121019] {
+            padding: 10px 56px 20px 56px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .chat-text[_ngcontent-ng-c60121019] {
+            font-family: "Geist Variable", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .links[_ngcontent-ng-c60121019] {
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            padding: 8px 20px;
+            gap: 12px;
+        }
+
+        .links-icon[_ngcontent-ng-c60121019] {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+        /*# sourceMappingURL=chat-bubble.component.css.map */
+    </style>
+</head>
+<body>
+    <app-root _nghost-ng-c1619360458="" ng-version="17.3.10">
+        <main _ngcontent-ng-c1619360458="" class="main">
+            <app-chat-box _ngcontent-ng-c1619360458="" _nghost-ng-c77164329="">
+                <div _ngcontent-ng-c77164329="" class="container-fluid bg-light vh-100 justify-content-center align-items-center flex-grow-1 overflow-auto">
+                    <!--bindings={
+                      "ng-reflect-ng-if": "false"
+                    }-->
+                    <div _ngcontent-ng-c77164329="" class="container chat-container h-100 p-3 bg-light">
+                        <div _ngcontent-ng-c77164329="" ng-reflect-ng-class="text-end" class="text-end">
+                            <app-chat-bubble _ngcontent-ng-c77164329="" _nghost-ng-c60121019="" ng-reflect-role="user" ng-reflect-content="How can I ingest data using Ti">
+                                <div _ngcontent-ng-c60121019="" class="chat-bubble user" ng-reflect-ng-class="user">
+                                    <div _ngcontent-ng-c60121019="" class="d-flex align-items-center">
+                                        <img _ngcontent-ng-c60121019="" src="assets/Images/user-avatar.svg" alt="You Icon" class="avtar"><p _ngcontent-ng-c60121019="" class="mb-1 name">You</p>
+                                        <!--bindings={
+                                          "ng-reflect-ng-if-else": "[object Object]"
+                                        }-->
+                                        <!--container-->
+                                    </div><div _ngcontent-ng-c60121019="" ng-reflect-ng-class="bg-light content-user" class="bg-light content-user">
+                                        <div _ngcontent-ng-c60121019="" class="chat-text">How can I ingest data using TimeXtender?</div>
+                                        <!--bindings={
+                                          "ng-reflect-ng-if": "false"
+                                        }-->
+                                    </div>
+                                </div>
+                            </app-chat-bubble>
+                        </div><div _ngcontent-ng-c77164329="" ng-reflect-ng-class="text-start" class="text-start">
+                            <app-chat-bubble _ngcontent-ng-c77164329="" _nghost-ng-c60121019="" ng-reflect-role="assistant" ng-reflect-content="To ingest data using TimeXtend" ng-reflect-refrences="https://support.timextender.co">
+                                <div _ngcontent-ng-c60121019="" class="chat-bubble assistant" ng-reflect-ng-class="assistant">
+                                    <div _ngcontent-ng-c60121019="" class="d-flex align-items-center">
+                                        <img _ngcontent-ng-c60121019="" src="assets/Images/xpilot.svg" alt="X-Pilot Icon" class="avtar"><p _ngcontent-ng-c60121019="" class="mb-1 name">X-Pilot</p><!--ng-container-->
+                                        <!--bindings={
+                                          "ng-reflect-ng-if-else": "[object Object]"
+                                        }-->
+                                        <!--container-->
+                                    </div><div _ngcontent-ng-c60121019="" ng-reflect-ng-class=" content-system bg-white" class="content-system bg-white">
+                                        <div _ngcontent-ng-c60121019="" class="chat-text">
+                                            To ingest data using TimeXtender, you can follow these steps:
+
+                                            <ol>
+                                                <li>First, open the TimeXtender project that you want to ingest data into.</li>
+                                                <li>Next, navigate to the Data Warehouse tab in the project.</li>
+                                                <li>Click on the "Data Sources" button to add a new data source.</li>
+                                                <li>Select the type of data source you want to ingest data from, such as a database or a file.</li>
+                                                <li>Provide the necessary connection details for the data source, such as the server name, database name, and credentials.</li>
+                                                <li>Once the data source is added, you can configure the tables and columns that you want to ingest data from.</li>
+                                                <li>Map the columns from the data source to the corresponding columns in your data warehouse.</li>
+                                                <li>Set up any necessary transformations or business rules for the data ingestion process.</li>
+                                                <li>Finally, run the data ingestion process to import the data from the source into your data warehouse.</li>
+                                            </ol>
+
+                                            By following these steps, you can successfully ingest data using TimeXtender.
+                                        </div><div _ngcontent-ng-c60121019="">
+                                            <div _ngcontent-ng-c60121019="" class="links"><img _ngcontent-ng-c60121019="" src="assets/Images/external-link.svg" alt="You Icon" class="links-icon"><a _ngcontent-ng-c60121019="" target="_blank" class="text-dark" href="https://support.timextender.com/exmon-general-137/how-can-i-remove-log4net-debug-messages-1861">https://support.timextender.com/exmon-general-137/how-can-i-remove-log4net-debug-messages-1861</a></div><div _ngcontent-ng-c60121019="" class="links"><img _ngcontent-ng-c60121019="" src="assets/Images/external-link.svg" alt="You Icon" class="links-icon"><a _ngcontent-ng-c60121019="" target="_blank" class="text-dark" href="https://support.timextender.com/exmon-data-governance-and-data-quality-140/how-do-i-use-dimensions-in-exmon-dg-1932">https://support.timextender.com/exmon-data-governance-and-data-quality-140/how-do-i-use-dimensions-in-exmon-dg-1932</a></div><div _ngcontent-ng-c60121019="" class="links"><img _ngcontent-ng-c60121019="" src="assets/Images/external-link.svg" alt="You Icon" class="links-icon"><a _ngcontent-ng-c60121019="" target="_blank" class="text-dark" href="https://support.timextender.com/exmon-data-governance-and-data-quality-140/how-can-i-remove-the-expectus-command-service-trace-log-file-1835">https://support.timextender.com/exmon-data-governance-and-data-quality-140/how-can-i-remove-the-expectus-command-service-trace-log-file-1835</a></div><div _ngcontent-ng-c60121019="" class="links"><img _ngcontent-ng-c60121019="" src="assets/Images/external-link.svg" alt="You Icon" class="links-icon"><a _ngcontent-ng-c60121019="" target="_blank" class="text-dark" href="https://support.timextender.com/exmon-data-governance-and-data-quality-140/how-do-i-send-parameters-to-query-and-compare-query-1914">https://support.timextender.com/exmon-data-governance-and-data-quality-140/how-do-i-send-parameters-to-query-and-compare-query-1914</a></div><div _ngcontent-ng-c60121019="" class="links"><img _ngcontent-ng-c60121019="" src="assets/Images/external-link.svg" alt="You Icon" class="links-icon"><a _ngcontent-ng-c60121019="" target="_blank" class="text-dark" href="https://support.timextender.com/product-updates/timextender-65901-1832">https://support.timextender.com/product-updates/timextender-65901-1832</a></div>
+                                            <!--bindings={
+                                              "ng-reflect-ng-for-of": "https://support.timextender.co"
+                                            }-->
+                                        </div>
+                                        <!--bindings={
+                                          "ng-reflect-ng-if": "true"
+                                        }-->
+                                    </div>
+                                </div>
+                            </app-chat-bubble>
+                        </div>
+                        <!--bindings={
+                          "ng-reflect-ng-for-of": "[object Object],[object Object"
+                        }-->
+                        <div _ngcontent-ng-c77164329="" class="mt-100 feedback"><img _ngcontent-ng-c77164329="" src="assets/Images/question-circle.svg" alt="Question Icon" class="icon me-2"><img _ngcontent-ng-c77164329="" src="assets/Images/search.svg" alt="search Icon" class="icon me-2"><a _ngcontent-ng-c77164329="" href="https://a51b6rb5p4f.typeform.com/to/FTwb1dTH?typeform-source=xpilot.timextender.com" target="_blank"><img _ngcontent-ng-c77164329="" src="assets/Images/thumbs-down.svg" alt="thumbs-down Icon" class="icon me-2"></a></div>
+                        <!--bindings={
+                          "ng-reflect-ng-if": "true"
+                        }-->
+                        <!--bindings={
+                          "ng-reflect-ng-if": "false"
+                        }-->
+                    </div><div _ngcontent-ng-c77164329="" class="container input-container bg-light position-fixed">
+                        <app-input-field _ngcontent-ng-c77164329="" _nghost-ng-c2252278866="" ng-reflect-question="" ng-reflect-is-generating="false">
+                            <div _ngcontent-ng-c2252278866="">
+                                <div _ngcontent-ng-c2252278866="" class="d-flex justify-content-center pb-3">
+                                    <button _ngcontent-ng-c2252278866="" type="button" class="new-chat-button"></button>
+                                    <!--bindings={
+                                      "ng-reflect-ng-if": "true"
+                                    }-->
+                                    <!--bindings={
+                                      "ng-reflect-ng-if": "false"
+                                    }-->
+                                </div><div _ngcontent-ng-c2252278866="" class="wrapper"><textarea _ngcontent-ng-c2252278866="" placeholder="Ask follow up" rows="4" class="form-control ng-untouched ng-pristine ng-valid" ng-reflect-ng-class="[object Object]" ng-reflect-model="">    </textarea><button _ngcontent-ng-c2252278866="" type="button" class="btn-primary send-button" ng-reflect-ng-class="[object Object]"></button></div><div _ngcontent-ng-c2252278866="" class="footer-text">Xpilot can make mistakes. Double-check important info.</div>
+                            </div>
+                        </app-input-field>
+                    </div>
+                </div>
+            </app-chat-box>
+        </main>
+    </app-root>
+    <script src="polyfills.js" type="module"></script>
+    <script src="scripts.js" defer=""></script>
+    <script src="main.js" type="module"></script>
+
+</body>
+</html>
