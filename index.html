@@ -1,48 +1,43 @@
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
- <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="styles.css">
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-       <script src="script.js"></script>
-       <title>Chatbot</title>
- </head>
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+      <script src="script.js" defer></script>
+      <title>Chatbot</title>
+</head>
 
- <body class="show-chatbot">
-       <button class="chatbot-toggle">
-             <span class="material-symbols-outlined"> 💬</span>
-             <span class="material-symbols-outlined"> ⤬</span>
-       </button>
-       <div class="chatbot">
-             <header>
-                   <h2> Chatbot</h2>
-                   <span class="material-symbols-outlined"> ╳</span>
-             </header>
-             <ul class="chatbox">
-                   <li class="chat incoming">
-                         <span class="material-symbols-outlined">🤖</span>
-                         <p> Hi There👋 <br> How are you today?</p>
-                   </li>
+<body class="show-chatbot">
+      <button class="chatbot-toggle">
+            <span class="material-symbols-outlined"> 💬</span>
+            <span class="material-symbols-outlined"> ⤬</span>
+      </button>
+      <div class="chatbot">
+            <header>
+                  <h2>Chatbot</h2>
+                  <span class="material-symbols-outlined">╳</span>
+            </header>
+            <ul class="chatbox">
+                  <li class="chat incoming">
+                        <span class="material-symbols-outlined">🤖</span>
+                        <p>Hi There👋<br>How are you today?</p>
+                  </li>
+            </ul>
+            <div class="textarea-container chat-input ">
+                  <textarea id="autoResizeTextarea" placeholder="type here"></textarea>
+                  <span id="send-btn" class="material-symbols-outlined">➡</span>
 
-             </ul>
-             <div class="chat-input">
-                   <textarea placeholder="Enter a message" required></textarea>
-                   <span id="send-btn" class="material-symbols-outlined">➡</span>
-             </div>
-       </div>
 
-       <ul class="chatbox"></ul>
-       <script src="config.js"></script>
-       <script src="script.js"></script>
+            </div>
+      </div>
+</body>
 
-       </div>
-       </bodyd>
-
- </html>
+</html>
 
 
 
@@ -58,7 +53,7 @@
 
 
 
- <!--!DOCTYPE html>
+<!--!DOCTYPE html>
  <html lang="en">
 
  <head>
@@ -167,4 +162,4 @@
        </script>
  </body>
 
- </html> -->
+ </html>
